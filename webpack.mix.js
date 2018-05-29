@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-
+let HtmlWebpackPlugin = require('html-webpack-plugin')
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -18,15 +18,29 @@ mix.js('src/js/app.js', 'dist/js')
 mix.setPublicPath('dist');
 mix.copyDirectory('src/img', 'dist/img');
 mix.copy('src/index.html', 'dist/index.html');
+// mix.copy('src/example.ejs', 'dist/example.html');
 mix.disableNotifications();
-mix.browserSync({
-    proxy: 'localhost:8080',
-    // port: 8000,
-    files: [
-        'dist/css/{*,**/*}.css',
-        'dist/js/{*,**/*}.js',
-        'dist/index.html',
-        // 'templates/{*,**/*}.html.twig'
+//TODO make working browsersync
+// mix.browserSync({
+//     proxy: 'localhost:8080',
+//     // port: 8000,
+//     files: [
+//         'dist/css/{*,**/*}.css',
+//         'dist/js/{*,**/*}.js',
+//         'dist/*.html',
+//         // 'templates/{*,**/*}.html.twig'
+//     ]
+// });
+mix.webpackConfig({
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "ejs-compiled-loader!./src/example1.ejs",
+            filename: "example1.html"
+        }),
+        new HtmlWebpackPlugin({
+            template: "ejs-compiled-loader!./src/example2.ejs",
+            filename: "example2.html"
+        })
     ]
 });
 // Full API
