@@ -19,29 +19,53 @@ mix.setPublicPath('dist');
 mix.copyDirectory('src/img', 'dist/img');
 mix.copy('src/index.html', 'dist/index.html');
 // mix.copy('src/example.ejs', 'dist/example.html');
+// mix.copy('ejs-compiled-loader!./src/example2.ejs', 'dist/example2.html');
+// mix.copy('src/example2.ejs', 'dist/example2.html');
 mix.disableNotifications();
 //TODO make working browsersync
-// mix.browserSync({
-//     proxy: 'localhost:8080',
-//     // port: 8000,
-//     files: [
-//         'dist/css/{*,**/*}.css',
-//         'dist/js/{*,**/*}.js',
-//         'dist/*.html',
-//         // 'templates/{*,**/*}.html.twig'
-//     ]
-// });
+if(process.env.ISHOT) {
+    mix.browserSync({
+        proxy: 'localhost:8080',
+        // port: 8000,
+        files: [
+            'dist/css/{*,**/*}.css',
+            'dist/js/{*,**/*}.js',
+            'dist/*.html',
+        // 'templates/{*,**/*}.html.twig'
+        ]
+    });
+}
 mix.webpackConfig({
+    // module: {
+    //     rules: [
+    //       {
+    //         test: /\.ejs$/,
+    //         loader: 'ejs-compiled-loader',
+    //       }
+    //     ]
+    //   }
     plugins: [
-        new HtmlWebpackPlugin({
-            template: "ejs-compiled-loader!./src/example1.ejs",
-            filename: "example1.html"
-        }),
+        // new HtmlWebpackPlugin({
+        //     template: "ejs-compiled-loader!./src/example1.ejs",
+        //     filename: "dist/example1.html"
+        // }),
         new HtmlWebpackPlugin({
             template: "ejs-compiled-loader!./src/example2.ejs",
-            filename: "example2.html"
+            filename: "example2.html",
+            inject: true
         })
-    ]
+    ],
+    devServer: {
+    //     hot: true,
+    //     inline: true,
+        watchContentBase: true
+    //     contentBase: __dirname
+    //     host: "localhost",
+    //     port: 8082,
+    //     watchOptions: {
+    //         poll: true
+    //     }
+    }
 });
 // Full API
 // mix.js(src, output);
