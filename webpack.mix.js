@@ -23,18 +23,18 @@ mix.copy('src/index.html', 'dist/index.html');
 // mix.copy('src/example2.ejs', 'dist/example2.html');
 mix.disableNotifications();
 //TODO make working browsersync
-if(process.env.ISHOT) {
-    mix.browserSync({
-        proxy: 'localhost:8080',
-        // port: 8000,
-        files: [
-            'dist/css/{*,**/*}.css',
-            'dist/js/{*,**/*}.js',
-            'dist/*.html',
-        // 'templates/{*,**/*}.html.twig'
-        ]
-    });
-}
+// if(process.env.ISHOT === true) {
+//     mix.browserSync({
+//         proxy: 'localhost:8080',
+//         // port: 8000,
+//         files: [
+//             'dist/css/{*,**/*}.css',
+//             'dist/js/{*,**/*}.js',
+//             'dist/*.html',
+//         // 'templates/{*,**/*}.html.twig'
+//         ]
+//     });
+// }
 mix.webpackConfig({
     // module: {
     //     rules: [
