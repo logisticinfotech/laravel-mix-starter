@@ -17,7 +17,7 @@ mix.js('src/js/app.js', 'dist/js')
 // mix.sourceMaps();
 mix.setPublicPath('dist');
 mix.copyDirectory('src/img', 'dist/img');
-mix.copy('src/index.html', 'dist/index.html');
+// mix.copy('src/index.html', 'dist/index.html');
 // mix.copy('src/example.ejs', 'dist/example.html');
 // mix.copy('ejs-compiled-loader!./src/example2.ejs', 'dist/example2.html');
 // mix.copy('src/example2.ejs', 'dist/example2.html');
@@ -52,6 +52,11 @@ mix.webpackConfig({
         new HtmlWebpackPlugin({
             template: "ejs-compiled-loader!./src/example2.ejs",
             filename: "example2.html",
+            inject: true
+        }),
+        new HtmlWebpackPlugin({
+            template: "ejs-compiled-loader!./src/index.ejs",
+            filename: "index.html",
             inject: true
         })
     ],

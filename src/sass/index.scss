@@ -1,0 +1,25 @@
+#lms-page-index {
+    p {
+        font-size: 14px;
+        //576
+        @include media-breakpoint-up(sm) {
+            font-size: 15px;
+        }
+        //768
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+        }
+        //992
+        @include media-breakpoint-up(lg) {
+            font-size: 17px;
+        }
+        //1200
+        @include media-breakpoint-up(xl) {
+            font-size: 18px;
+        }
+
+        span {
+            background-color: $primary;
+        }
+    }
+}
