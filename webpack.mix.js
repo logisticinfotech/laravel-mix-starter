@@ -16,7 +16,10 @@ mix
     .sass('src/sass/app.scss', 'dist/css');
 
 mix.styles([
-    'public/css/vendor/normalize.css', 'public/css/vendor/videojs.css'
+    'scr/vendor/animate/animate.css',
+    'scr/vendor/dataTables/datatabkes.min.css',
+    'scr/vendor/font-awesome/css/font-awesome.min.css',
+    'scr/vendor/font-awesome/css/font-awesome.min.css',
 ], 'dist/css/vendor.css');
 
 // mix.sourceMaps();
