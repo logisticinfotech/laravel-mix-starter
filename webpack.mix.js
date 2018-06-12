@@ -36,6 +36,10 @@ mix.disableNotifications();
 //     });
 // }
 mix.webpackConfig({
+    output: {
+        // path: path.join(__dirname, 'dist'),
+        publicPath: '',
+    },
     // module: {
     //     rules: [
     //       {
@@ -62,10 +66,10 @@ mix.webpackConfig({
     ],
     devServer: {
     //     hot: true,
-    //     inline: true,
-        watchContentBase: true
-    //     contentBase: __dirname
-    //     host: "localhost",
+        // inline: true,
+    //    contentBase: __dirname
+        watchContentBase: true,
+        host: "192.168.0.2"
     //     port: 8082,
     //     watchOptions: {
     //         poll: true
