@@ -12,10 +12,16 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
  */
 
 mix
-    .js('src/js/app.js', 'dist/js')
-    .sass('src/sass/app.scss', 'dist/css');
+.js('src/js/app.js', 'dist/js');
 
-mix.styles([
+mix.combine([
+    'src/vendor/dataTables/datatables.min.js',
+    'src/vendor/jqueryui/jquery-ui.min.js',
+    'src/vendor/sweetalert/sweetalert.min.js',
+    'src/vendor/validate/jquery.validate.min.js'
+], 'dist/js/vendor.js');
+
+mix.combine([
     'src/vendor/animate/animate.css',
     'src/vendor/dataTables/datatables.min.css',
     'src/vendor/font-awesome/css/font-awesome.min.css',
@@ -23,12 +29,11 @@ mix.styles([
     'src/vendor/src/vendor/sweetalert/sweetalert.css',
 ], 'dist/css/vendor.css');
 
-mix.js([
-    'src/vendor/dataTables/datatables.js',
-    'src/vendor/jqueryui/jquery-ui.min.js',
-    'src/vendor/sweetalert/sweetalert.min.js',
-    'src/vendor/validate/jquery.validate.min.js'
-], 'dist/js/vendor.js');
+mix.sass('src/sass/app.scss', 'dist/css');
+
+
+
+
 
 // mix.sourceMaps();
 mix.setPublicPath('dist');
@@ -44,8 +49,8 @@ mix.webpackConfig({
     plugins: [
         new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/index.ejs", filename: "index.html", inject: true}),
         new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/about-us.ejs", filename: "about-us.html", inject: true}),
-        new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/contact-us.ejs", filename: "dist/contact-us.html"}),
-        new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/datatable-demo.ejs", filename: "dist/datatable-demo.html"})
+        new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/contact-us.ejs", filename: "contact-us.html"}),
+        new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/datatable-demo.ejs", filename: "datatable-demo.html"})
     ],
     devServer: {
         //hot: true, inline: true, contentBase: __dirname
