@@ -16,11 +16,19 @@ mix
     .sass('src/sass/app.scss', 'dist/css');
 
 mix.styles([
-    'scr/vendor/animate/animate.css',
-    'scr/vendor/dataTables/datatabkes.min.css',
-    'scr/vendor/font-awesome/css/font-awesome.min.css',
-    'scr/vendor/font-awesome/css/font-awesome.min.css',
+    'src/vendor/animate/animate.css',
+    'src/vendor/dataTables/datatables.min.css',
+    'src/vendor/font-awesome/css/font-awesome.min.css',
+    'src/vendor/jqueryui/jquery-ui.min.css',
+    'src/vendor/src/vendor/sweetalert/sweetalert.css',
 ], 'dist/css/vendor.css');
+
+mix.js([
+    'src/vendor/dataTables/datatables.js',
+    'src/vendor/jqueryui/jquery-ui.min.js',
+    'src/vendor/sweetalert/sweetalert.min.js',
+    'src/vendor/validate/jquery.validate.min.js'
+], 'dist/js/vendor.js');
 
 // mix.sourceMaps();
 mix.setPublicPath('dist');
@@ -36,7 +44,8 @@ mix.webpackConfig({
     plugins: [
         new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/index.ejs", filename: "index.html", inject: true}),
         new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/about-us.ejs", filename: "about-us.html", inject: true}),
-        new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/contact-us.ejs", filename: "dist/contact-us.html"})
+        new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/contact-us.ejs", filename: "dist/contact-us.html"}),
+        new HtmlWebpackPlugin({template: "ejs-compiled-loader!./src/datatable-demo.ejs", filename: "dist/datatable-demo.html"})
     ],
     devServer: {
         //hot: true, inline: true, contentBase: __dirname
