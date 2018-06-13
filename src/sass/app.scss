@@ -7,12 +7,16 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+
+
 main {
     .container {
         min-height: 500px;
+
     }
 }
 // @import "cover";
 
 @import "header";
 @import "index";
+@import "contact-us";
