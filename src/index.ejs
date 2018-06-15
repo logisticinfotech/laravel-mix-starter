@@ -84,11 +84,26 @@
                             <h3>Sweet Alert Exmaple</h3>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="sweetalert">
-
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="sweetalert">
+                            <button class="btn btn-info hello">Click here </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="sweetalert">
+                            <button class="btn btn-info promises">Promises </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="sweetalert">
+                            <button class="btn btn-info sure">Are  you sure </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="sweetalert">
+                            <button class="btn btn-info delete-account">Good job </button>
                         </div>
                     </div>
                 </div>
@@ -97,7 +112,45 @@
 
         <% include /src/include/footer.ejs %>
 
-       <% include /src/include/scripts.ejs %>
+            <% include /src/include/scripts.ejs %>
+                <script>
+
+                    $('button.hello').click(function (e) {
+                        swal("Hello world!");
+                    });
+
+                    $('button.delete-account').click(function (e) {
+                        swal("Good job!", "You clicked the button!", "success");
+                    });
+
+                    $('button.promises').click(function (e) {
+                        swal("Click on either the button or outside the modal.")
+                            .then((value) => {
+                                swal(`The returned value is: ${value}`);
+                            });
+                    });
+
+                    $('button.sure').click(function (e) {
+                        swal({
+                            title: "Are you sure?",
+                            text: "Once deleted, you will not be able to recover this imaginary file!",
+                            icon: "warning",
+                            buttons: true,
+                            dangerMode: true,
+                        })
+                            .then((willDelete) => {
+                                if (willDelete) {
+                                    swal("Poof! Your imaginary file has been deleted!", {
+                                        icon: "success",
+                                    });
+                                } else {
+                                    swal("Your imaginary file is safe!");
+                                }
+                            });
+                    });
+
+
+                </script>
 </body>
 
 </html>

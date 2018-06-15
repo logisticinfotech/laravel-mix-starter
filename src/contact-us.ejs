@@ -34,19 +34,20 @@
                         </div>
                         <div class="col-md-6">
                             <div class="contact-form">
-                                <form action="">
+                                <form action="" id="first_form">
                                     <div class="form-group">
                                         <label for="pwd">Full Name</label>
-                                        <input type="password" class="form-control" id="pwd">
+                                        <input type="text" class="form-control" id="first_name" data-validation-error-msg="You did not enter a valid e-mail">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email </label>
-                                        <input type="email" class="form-control" id="email">
+                                        <input type="email" class="form-control" id="email" data-validation="required"
+                                        data-validation-error-msg="You did not enter a password">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="comment">Comment:</label>
-                                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                                        <textarea class="form-control" rows="5" id="last_name"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -59,7 +60,36 @@
 
         <% include /src/include/footer.ejs %>
 
-            <% include /src/include/scripts.ejs %>
-</body>
+        <% include /src/include/scripts.ejs %>
+        <script>
+        $(document).ready(function() {
 
+ $('#first_form').submit(function(e) {
+   e.preventDefault();
+   var first_name = $('#first_name').val();
+   var email = $('#email').val();
+   var last_name = $('#last_name').val();
+   $(".error").remove();
+
+   if (first_name.length < 1) {
+     $('#first_name').after('<span class="error">This field is required</span>');
+   }
+
+   if (email.length < 1) {
+     $('#email').after('<span class="error">This field is required</span>');
+   }  if (last_name.length < 1) {
+     $('#last_name').after('<span class="error">This field is required</span>');
+   } else {
+     var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+     var validEmail = regEx.test(email);
+     if (!validEmail) {
+       $('#email').after('<span class="error">Enter a valid email</span>');
+     }
+   }
+ });
+
+});
+
+ </script>
+</body>
 </html>
