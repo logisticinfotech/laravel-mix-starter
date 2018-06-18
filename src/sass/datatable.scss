@@ -2,3 +2,8 @@
     width: 100%;
     padding: 50px 0px 0px 0px;
 }
+[type="search"] {
+    outline-offset: -2px;
+    -webkit-appearance: none !important;
+    border: 1px solid gray;
+}
