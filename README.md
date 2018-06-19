@@ -21,11 +21,11 @@
         inject: false
     })
 
-    this will generate index.html file in dist folder and header/footer will be included, please check index.ejs file content.
+this will generate index.html file in dist folder and header/footer will be included, please check index.ejs file content.
 
 ## Include html file
-    we can use standerd ejs syntex
+we can use standerd ejs syntex
     <% include /src/include/header.ejs %>
 
 ## app.scss
-    this file includes bootstrap directly from node_modules
+this file includes bootstrap directly from node_modules
