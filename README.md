@@ -25,6 +25,7 @@ this will generate index.html file in dist folder and header/footer will be incl
 
 ## Include html file
 we can use standerd ejs syntex
+
     <% include /src/include/header.ejs %>
 
 ## app.scss
