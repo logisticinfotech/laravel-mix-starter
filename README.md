@@ -1,10 +1,12 @@
-# laravel-mix-starter
+# Laravel Mix Starter Project
 
 ## Introduction
-    this demo is based on laravel-mix and its using ejs-compiled-loader to compile ejs files.
-    other functionality and document should work as laravel-mix documantation.
+    This demo is based on laravel-mix starter kit and its using ejs-compiled-loader to compile ejs files.
+    other functionality and document should work as laravel-mix documentation.
+    
+    You can find step by step guide from <a href="https://www.logisticinfotech.com/blog/laravel-mix-starter-for-html-bootstrap-theme-development">this blog</a>
 
-## Instalattion
+## Installation
     npm install
 
 ## To run with live reload
