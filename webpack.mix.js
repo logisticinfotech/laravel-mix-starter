@@ -15,7 +15,6 @@ mix.js("src/js/app.js", "dist/js");
 
 mix.combine(
     [
-
         "src/vendor/dataTables/datatables.min.js",
         "src/vendor/jqueryui/jquery-ui.min.js",
         "src/vendor/sweetalert/sweetalert.min.js",
@@ -33,15 +32,18 @@ mix.combine(
         //"src/vendor/sweetalert/sweetalert.css"
     ],
     "dist/css/vendor.css"
-);
+).options({
+    processCssUrls: false
+});
 
 mix.sass("src/sass/app.scss", "dist/css");
 
 mix.copyDirectory("src/vendor/font-awesome/fonts", "dist/fonts");
+mix.copyDirectory("src/fonts/", "dist/fonts");
 
 // mix.sourceMaps();
 mix.setPublicPath("dist");
-mix.copyDirectory("src/img", "dist/img");
+mix.copyDirectory("src/images", "dist/images");
 
 mix.disableNotifications();
 

@@ -1,22 +1,8 @@
 <header>
-    <!-- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow navbar-expand-md">
-        <img class="mb-2 lms-header-logo" src="img/logistic-logo.svg" alt="" width="150">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-        <nav class="my-2 my-md-0 mr-md-3" id="navbarsExample04">
-            <a class="p-2 text-dark" href="#">Features</a>
-            <a class="p-2 text-dark" href="#">Enterprise</a>
-            <a class="p-2 text-dark" href="#">Support</a>
-            <a class="p-2 text-dark" href="#">Pricing</a>
-        </nav>
-        <a class="btn btn-outline-primary" href="#">Sign up</a>
-    </div> -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
-            <img class="mb-2 lms-header-logo" src="img/logistic-logo.svg" alt="" width="150">
+            <img class="mb-2 lms-header-logo" src="images/logistic-logo.svg" alt="" width="150">
         </a>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,9 +10,10 @@
 
         <div class="collapse navbar-collapse" id="navbarsExample04">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home
-                        <span class="sr-only">(current)</span>
+
+                <li class="nav-item <%= htmlWebpackPlugin.options.filename === 'index.html' ? 'active' : '' %>" >
+                <a class="nav-link" href="index.html">Home
+                    <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
