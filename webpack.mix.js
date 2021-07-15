@@ -1,5 +1,6 @@
 let mix = require("laravel-mix");
 let HtmlWebpackPlugin = require("html-webpack-plugin");
+mix.setPublicPath("dist");
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -42,16 +43,16 @@ mix.copyDirectory("src/vendor/font-awesome/fonts", "dist/fonts");
 mix.copyDirectory("src/fonts/", "dist/fonts");
 
 // mix.sourceMaps();
-mix.setPublicPath("dist");
+
 mix.copyDirectory("src/images", "dist/images");
 
 mix.disableNotifications();
 
 mix.webpackConfig({
-    output: {
-        // path: path.join(__dirname, 'dist'),
-        publicPath: ""
-    },
+    // output: {
+    //     path: path.join(__dirname, 'dist'),
+    //     // publicPath: ""
+    // },
     plugins: [
         new HtmlWebpackPlugin({
             template: "ejs-compiled-loader!./src/index.ejs",
@@ -80,9 +81,11 @@ mix.webpackConfig({
         })
     ],
     devServer: {
-        //hot: true, inline: true, contentBase: __dirname
-        disableHostCheck: false,
-        watchContentBase: true,
+        hot: true,
+        // inline: true,
+        // contentBase: __dirname,
+        // disableHostCheck: true,
+        // watchContentBase: true,
         host: "0.0.0.0",
         open: true
         //port: 8082,

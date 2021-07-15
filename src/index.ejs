@@ -10,15 +10,16 @@
 
     <title>Bootstrap - Button Demo</title>
 
-    <% include /src/include/styles.ejs %>
+    <% include ./include/styles.ejs %>
 
 </head>
 
 <body>
 
-    <% include /src/include/header.ejs %>
+    <% include ./include/header.ejs %>
 
         <main id="lms-page-index">
+            <p>Test color on p tag</p>
             <div class="container">
                 <div class="row animated fadeInRight">
                     <div class="col-md-12">
@@ -110,9 +111,9 @@
             </div>
         </main>
 
-        <% include /src/include/footer.ejs %>
+        <% include ./include/footer.ejs %>
 
-            <% include /src/include/scripts.ejs %>
+            <% include ./include/scripts.ejs %>
                 <script>
 
                     $('button.hello').click(function (e) {
