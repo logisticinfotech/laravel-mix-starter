@@ -82,6 +82,7 @@ mix.webpackConfig({
     ],
     devServer: {
         hot: true,
+        liveReload: true,
         // inline: true,
         // contentBase: __dirname,
         // disableHostCheck: true,
