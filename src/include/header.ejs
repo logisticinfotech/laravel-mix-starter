@@ -1,44 +1,44 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">
-            <img class="mb-2 lms-header-logo" src="images/logistic-logo.svg" alt="" width="150">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html">
+				<img class="mb-2 lms-header-logo" src="images/logistic-logo.svg" alt="" width="150">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample04">
-            <ul class="navbar-nav ml-auto">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto">
 
-                <li class="nav-item <%= htmlWebpackPlugin.options.filename === 'index.html' ? 'active' : '' %>" >
-                <a class="nav-link" href="index.html">Home
-                    <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About us</a>
-                </li>
+					<li class="nav-item <%= htmlWebpackPlugin.options.filename === 'index.html' ? 'active' : '' %>" >
+					<a class="nav-link" href="index.html">Home
+						<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about-us.html">About us</a>
+					</li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="datatable-demo.html">Datatables</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="font-awesome.html">Font Awesome icon</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact-us.html">Contact us</a>
-                </li>
-            </ul>
-        </div>
+					<li class="nav-item">
+						<a class="nav-link" href="datatable-demo.html">Datatables</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="font-awesome.html">Font Awesome icon</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact-us.html">Contact us</a>
+					</li>
+				</ul>
+			</div>
+		</div>
     </nav>
 </header>

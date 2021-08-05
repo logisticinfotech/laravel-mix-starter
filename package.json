@@ -11,7 +11,7 @@
     "devDependencies": {
         "@popperjs/core": "^2.9.2",
         "axios": "^0.21",
-        "bootstrap": "^5.0.2",
+        "bootstrap": "^5.1.0",
         "ejs": "^2.6.1",
         "ejs-compiled-loader": "^1.1.0",
         "html-webpack-plugin": "^5.3.2",
